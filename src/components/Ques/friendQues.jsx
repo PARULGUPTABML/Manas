@@ -118,8 +118,8 @@ function QuesFriend() {
                             exit={{ y: -150, opacity: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <div className="text-center mt-5 ">
-                                <div className="mb-10 text-4xl font-semibold font-rocaLt">
+                            <div className="text-center ">
+                                <div className="mb-10 text-2xl sm:text-3xl md:text-4xl font-semibold font-rocaLt">
                                     <span>{`${currentQuestion + 1}) `} &nbsp; </span> {questions[currentQuestion].question}
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ function QuesFriend() {
                                 {questions[currentQuestion].options.map((option, index) => (
                                     <div className='mt-5 text-xl text-center mb-10' key={index}>
                                         <button onClick={() => handleAnswerClick(option)}>
-                                            <div className='bg-[#e6eaf0] bg-opacity-30 hover:bg-opacity-80 border-2 border-[#c3ccdb] w-72 m-3 p-3 rounded-lg'>
+                                            <div className='bg-[#e6eaf0] bg-opacity-30 hover:bg-opacity-80 border-2 border-[#c3ccdb] w-60 sm:w-72 m-3 p-3 rounded-lg'>
                                                 {option}
                                             </div>
                                         </button>
@@ -138,28 +138,28 @@ function QuesFriend() {
                     </AnimatePresence>
                 ) : (
                     <div className="text-center">
-                    <div className='text-4xl font-bold font-rocaLt mb-7 bg-[]'>Thank you for completing the questionnaire !</div>
-                    <div className='text-2xl font-semibold mb-7'>Your Analysis:</div>
-                    {isLoading ? (
-                        <div className="">Loading...</div>
-                    ) : (
-                        <div className='text-xl mx-52 rounded-2xl bg-[#c7ebf2] bg-opacity-70 p-5 font-semibold'>
-                            <Markdown>{llmResponse}</Markdown>
+                        <div className='text-3xl sm:text-3xl md:text-4xl font-bold font-rocaLt mb-7 '>Thank you for completing the questionnaire !</div>
+                        <div className='text-2xl font-semibold mb-7'>Your Analysis:</div>
+                        {isLoading ? (
+                            <div className="">Loading...</div>
+                        ) : (
+                            <div className='text-base sm:text-lg md:text-xl sm:mx-8 md:mx-16 lg:mx-52 rounded-2xl bg-[#c7ebf2] bg-opacity-70 p-5 font-semibold'>
+                                <Markdown>{llmResponse}</Markdown>
+                            </div>
+                        )}
+                        <div className="">
+                            <Link to="/book-session">
+                                <button className="mt-10  md:mt-14 px-4 md:px-6 py-2 md:py-2 text-xl sm:text-2xl md:text-2xl lg:text-2xl bg-[#e6eddd] text-black rounded-2xl hover:bg-[#dfedce] hover:text-black transition duration-300">
+                                    Book a Session
+                                </button>
+                            </Link>
+                            <Link to="">
+                                <button className="mt-10 md:mt-14 px-4 md:px-6 py-2 md:py-2 text-xl sm:text-2xl md:text-2xl lg:text-2xl bg-[#e6eddd] text-black rounded-2xl hover:bg-[#dfedce] hover:text-black transition duration-300">
+                                    Talk to Yuri
+                                </button>
+                            </Link>
                         </div>
-                    )}
-                    <div className="">
-                        <Link to="/book-session">
-                            <button className="mt-10 mr-20  md:mt-14 px-4 md:px-6 py-2 md:py-2 text-xl sm:text-2xl md:text-2xl lg:text-2xl bg-[#e6eddd] text-black rounded-2xl hover:bg-[#dfedce] hover:text-black transition duration-300">
-                                Book a Session
-                            </button>
-                        </Link>
-                        <Link to="">
-                            <button className="mt-10 md:mt-14 px-4 md:px-6 py-2 md:py-2 text-xl sm:text-2xl md:text-2xl lg:text-2xl bg-[#e6eddd] text-black rounded-2xl hover:bg-[#dfedce] hover:text-black transition duration-300">
-                                Talk to Yuri
-                            </button>
-                        </Link>
                     </div>
-                </div>
 
                 )}
             </div>
