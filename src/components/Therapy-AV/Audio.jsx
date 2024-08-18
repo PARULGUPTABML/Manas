@@ -1,31 +1,38 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
 function Audio() {
+    const [currentAudio, setCurrentAudio] = useState('/Therapy-AV/audio3.mp3');
+    const audioRef = useRef();
+
     const audios = [
         {
-          img: "/AV/a1.svg",
-          song: "/Therapy-AV/audio1.mp3"
+            img: "/AV/a1.svg",
+            song: "/Therapy-AV/audio3.mp3"
         },
         {
-          img: "/AV/a2.svg",
-          song: "/Therapy-AV/audio2.mp3"
+            img: "/AV/a2.svg",
+            song: "/Therapy-AV/audio1.mp3"
         },
         {
-          img: "/AV/a3.svg",
-          song: "/Therapy-AV/audio3.mp3"
+            img: "/AV/a3.svg",
+            song: "/Therapy-AV/audio2.mp3"
         },
         {
-          img: "/AV/a4.svg",
-          song: "/Therapy-AV/audio4.mp3"
-        }
-      ];
+            img: "/AV/a4.svg",
+            song: "/Therapy-AV/audio4.mp3"
+        },
+        // {
+        //     img: "/AV/a5.svg",
+        //     song: "/Therapy-AV/audio4.mp3"
+        //   }
+    ];
 
-    const handleopen = (audio) => {
-        const player = document.getElementsByClassName('player');
-        if (player) {
-            player.src = audio;
-            player.autoplay = true;
+    const handleOpen = (song) => {
+        setCurrentAudio(song);
+        if (audioRef.current) {
+            audioRef.current.audio.load();
+            audioRef.current.audio.play();
         }
     };
 
@@ -42,25 +49,27 @@ function Audio() {
             </div>
 
             <ReactAudioPlayer
-                src="/Meditation/test.mp3"
+                ref={audioRef}
+                src={currentAudio}
                 controls
                 className='player scale-100 mt-8 block sm:hidden '
             />
 
             <div className='flex justify-center items-center py-16 flex-wrap'>
                 {audios.map((audio, index) => (
-                    <img 
+                    <img
                         key={index}
                         src={audio.img}
-                        alt= "image"
+                        alt="image"
                         className='md:pr-14 cursor-pointer mb-4 md:mb-0'
-                        onClick={() => handleopen(audio.song)}
+                        onClick={() => handleOpen(audio.song)}
                     />
                 ))}
             </div>
             <div className='flex justify-center'>
                 <ReactAudioPlayer
-                    src="/Meditation/test.mp3"
+                    ref={audioRef}
+                    src={currentAudio}
                     controls
                     className='player scale-125 mb-14 hidden sm:block'
                 />
