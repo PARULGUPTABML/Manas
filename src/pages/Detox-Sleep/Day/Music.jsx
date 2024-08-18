@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AudioPlayer from './AudioPlayer';
 
-function Audio() {
+function Audio() { 
+
   const sources = [
-    "/Meditation/test.mp3",
-    "/Meditation/test.mp3",
-    "/Meditation/test.mp3"
+    "/Meditation/audio1.mp3",
+    "/Meditation/audio2.mp3",
+    "/Meditation/audio3.mp3"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,7 +56,7 @@ function Audio() {
                 transition={{ duration: 0.4 }}
                 className="absolute w-full h-full"
               >
-                <AudioPlayer />
+                <AudioPlayer currentIndex={currentIndex} sources={sources} />
               </motion.div>
             </AnimatePresence>
           </div>
@@ -68,18 +69,17 @@ function Audio() {
           />
         </div>
       </div>
-
       <div className="flex justify-center items-center my-10 md:mr-36 md:my-32 relative">
-        <div className="relative">
+      <div className="relative">
           <img
             src="/Meditation/women.svg"
             alt="women"
-            className="relative scale-90 md:scale-[1.7]"
+           className="relative scale-90 md:scale-[1.7]"
           />
           <img
             src="/Meditation/flower.svg"
             alt="flower"
-            className="absolute right-32 -bottom-28 md:right-48 scale-50 md:scale-90"
+             className="absolute right-32 -bottom-28 md:right-48 scale-50 md:scale-90"
           />
           <img
             src="/Meditation/sun.svg"
@@ -88,37 +88,7 @@ function Audio() {
           />
         </div>
       </div>
-      <div className="lg:hidden block flex items-center justify-center md:ml-44 scale-100 md:scale-125 -mt-8 mb-4 md:mt-0">
-          <img
-            src="/Meditation/Backward.svg"
-            alt="back"
-            onClick={handlePrev}
-            className="cursor-pointer mx-3 pt-10"
-          />
-
-          <div className="relative w-80">
-            <AnimatePresence initial={false} custom={direction}>
-              <motion.div
-                key={currentIndex}
-                custom={direction}
-                initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="absolute w-full h-full"
-              >
-                <AudioPlayer />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <img
-            src="/Meditation/Forward.svg"
-            alt="next"
-            onClick={handleNext}
-            className="cursor-pointer mx-3 pt-10"
-          />
-        </div>
+      
     </div>
   );
 }
