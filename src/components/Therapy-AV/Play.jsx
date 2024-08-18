@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from "react-router-dom"
 import './Play.css'
 
@@ -9,11 +9,20 @@ function Play() {
     const openModal4 = () => document.getElementById('my_modal_4').showModal();
     const openModal5 = () => document.getElementById('my_modal_5').showModal();
 
-    const openModal6 = () => document.getElementById('my_modal_6').showModal();
+  
+    const closeRef = [
+        useRef(null),
+        useRef(null),
+        useRef(null),
+        useRef(null),
+        useRef(null)
+    ];
 
-
-
-
+    const closeVideo = (index) => {
+        const video = (closeRef[index].current);
+        video.pause();
+    }
+    
     return (
         <div>
             <div className='bg-blueCustom'>
@@ -86,6 +95,7 @@ function Play() {
                 <div className="modal-box w-full max-w-2xl h-180px">
                     <div className="aspect-w-9 aspect-h-16">
                         <video
+                            ref={closeRef[0]}
                             src="/Therapy/video1.mp4"
                             controls
                             style={{ width: "635px", height: "374px" }}
@@ -94,7 +104,7 @@ function Play() {
                     </div>
                     <div className="modal-action">
                         <form method="dialog">
-                            <button className="btn">Close</button>
+                            <button className="btn" onClick={()=>{closeVideo(0)}}>Close</button>
                         </form>
                     </div>
                 </div>
@@ -103,7 +113,8 @@ function Play() {
             <dialog id="my_modal_2" className="modal">
                 <div className="modal-box w-full max-w-2xl h-180px">
                     <div className="aspect-w-9 aspect-h-16">
-                    <video
+                        <video
+                            ref={closeRef[1]}
                             src="/Therapy/video2.mp4"
                             controls
                             style={{ width: "635px", height: "374px" }}
@@ -112,7 +123,7 @@ function Play() {
                     </div>
                     <div className="modal-action">
                         <form method="dialog">
-                            <button className="btn">Close</button>
+                            <button className="btn" onClick={()=>{closeVideo(1)}}>Close</button>
                         </form>
                     </div>
                 </div>
@@ -123,7 +134,8 @@ function Play() {
             <dialog id="my_modal_3" className="modal">
                 <div className="modal-box w-full max-w-2xl h-180px">
                     <div className="aspect-w-9 aspect-h-16">
-                    <video
+                        <video
+                            ref={closeRef[2]}
                             src="/Therapy/video3.mp4"
                             controls
                             style={{ width: "635px", height: "374px" }}
@@ -132,7 +144,7 @@ function Play() {
                     </div>
                     <div className="modal-action">
                         <form method="dialog">
-                            <button className="btn">Close</button>
+                            <button className="btn" onClick={()=>{closeVideo(2)}}>Close</button>
                         </form>
                     </div>
                 </div>
@@ -142,7 +154,8 @@ function Play() {
             <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-full max-w-2xl h-180px">
                     <div className="aspect-w-9 aspect-h-16">
-                    <video
+                        <video
+                            ref={closeRef[3]}
                             src="/Therapy/video5.mp4"
                             controls
                             style={{ width: "635px", height: "374px" }}
@@ -151,7 +164,7 @@ function Play() {
                     </div>
                     <div className="modal-action">
                         <form method="dialog">
-                            <button className="btn">Close</button>
+                            <button className="btn" onClick={()=>{closeVideo(3)}}>Close</button>
                         </form>
                     </div>
                 </div>
@@ -161,7 +174,8 @@ function Play() {
             <dialog id="my_modal_5" className="modal">
                 <div className="modal-box w-full max-w-2xl h-180px">
                     <div className="aspect-w-9 aspect-h-16">
-                    <video
+                        <video
+                            ref={closeRef[4]}
                             src="/Therapy/video6.mp4"
                             controls
                             style={{ width: "635px", height: "374px" }}
@@ -170,19 +184,7 @@ function Play() {
                     </div>
                     <div className="modal-action">
                         <form method="dialog">
-                            <button className="btn">Close</button>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
-
-            <dialog id="my_modal_6" className="modal modal-bottom sm:modal-middle" >
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Hello!</h3>
-                    <p className="py-4">Press ESC key or click the button below to close</p>
-                    <div className="modal-action">
-                        <form method="dialog">
-                            <button className="btn">Close</button>
+                            <button className="btn" onClick={()=>{closeVideo(4)}}>Close</button>
                         </form>
                     </div>
                 </div>
