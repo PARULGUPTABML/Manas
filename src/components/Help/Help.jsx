@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Help() {
   const cards = [
-    { img: "/Help/me.svg", text: "Me"  },
-    { img: "/Help/friend.svg", text: "Friend" },
-    { img: "/Help/family.svg", text: "Family Member" },
+    { img: "/Help/me.svg", text: "Me", link: "/my-questions" },
+    { img: "/Help/friend.svg", text: "A Friend", link: "/friend-questions" },
+    { img: "/Help/family.svg", text: "A Family Member", link: "/family-questions" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -21,6 +22,10 @@ function Help() {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
     );
+  };
+
+  const handleCardClick = () => {
+    navigate(cards[currentIndex].link);
   };
 
   return (
@@ -44,38 +49,30 @@ function Help() {
         <div className="relative w-64 sm:w-80 mb-16 sm:mb-32 lg:mb-0 lg:ml-8">
           <div className="relative h-80 sm:h-96 flex items-center justify-center">
             <AnimatePresence initial={false}>
-              {cards.map((card, index) => (
-                
-                <motion.div
-                
-                  key={index}
-                  className={`absolute inset-0 w-full h-full`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{
-                    opacity: index === currentIndex ? 1 : 0,
-                    scale: index === currentIndex ? 1 : 0.8,
-                  }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.5 }}
+              <motion.div
+                key={currentIndex}
+                className="absolute inset-0 w-full h-full"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div
+                  className="relative w-full h-full block cursor-pointer"
+                  onClick={handleCardClick}
                 >
-                  <Link to={
-                     index === 0 ? "/my-questions" :
-                     index === 1 ? "/friend-questions" :
-                     "/family-questions"
-                  } className="relative w-full h-full block">
-                    <img
-                      src={card.img}
-                      className="w-full object-cover  rounded-box mt-0 sm:mt-0 lg:-mt-4 scale-100 sm:scale-110 lg:scale-110"
-                      alt="Carousel item"
-                    />
-                    <div className="w-full absolute bottom-0 bg-[#E4FFFD] p-2 rounded-b text-center opacity-70">
-                      <span className="text-black text-lg sm:text-xl font-extrabold">
-                        {card.text}
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
+                  <img
+                    src={cards[currentIndex].img}
+                    className="w-full object-cover rounded-box mt-0 sm:mt-0 lg:-mt-4 scale-100 sm:scale-110 lg:scale-110"
+                    alt="Carousel item"
+                  />
+                  <div className="w-full absolute bottom-0 bg-[#E4FFFD] p-2 rounded-b text-center opacity-70">
+                    <span className="text-black text-lg sm:text-xl font-extrabold">
+                      {cards[currentIndex].text}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
             </AnimatePresence>
             <button
               onClick={handlePrev}
