@@ -1,21 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "./AudioPlayer.css"
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ currentIndex, sources }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
   const audioRef = useRef(null);
   const sliderRef = useRef(null);
-
-  const sources = [
-    "/Meditation/test.mp3",
-    "/Meditation/test.mp3",
-    "/Meditation/test.mp3"
-  ];
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -35,7 +28,7 @@ const AudioPlayer = () => {
       audio.removeEventListener('timeupdate', updateTime);
       audio.removeEventListener('loadedmetadata', updateTime);
     };
-  }, [currentIndex, isDragging]);
+  }, [currentIndex, isDragging, sources]);
 
   const togglePlayPause = () => {
     const audio = audioRef.current;
