@@ -4,7 +4,7 @@
 
 Sukoon is a mental health wellness platform dedicated to helping individuals manage anxiety, depression, and other mental health issues. The platform offers various features, including AI-driven support, self-assessment tools, access to therapists, and resources to enhance mental well-being. Sukoon’s goal is to create a supportive, personalized space for users to explore their mental health, receive guidance, and engage in therapeutic practices.
 
-## 🛠️ Features
+## 🌟 Features
 
 ### 1) **💬 Wanna Talk about it - Talk to Yuri**
 **Description:**  
@@ -57,7 +57,7 @@ The following technologies are used in Sukoon:
   - OAuth2 (for user authentication)
   - Gemini API for dream analyzing
   - Hume API for empathetic voice talk
-  - - AI & Machine Learning APIs for chatbot functionality
+  - AI & Machine Learning APIs for chatbot functionality
 
 ---
 
