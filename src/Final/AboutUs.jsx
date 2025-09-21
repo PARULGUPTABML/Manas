@@ -10,7 +10,7 @@ const AboutUs = () => {
           <div className="mt-3 text-6xl lg:text-8xl font-light mb-8 font-Bspring">US</div>
         </div>
         <p className="text-base lg:text-lg text-center lg:text-left">
-          Welcome to Sukoon! We're Ayesha, Anamika, Pranitdeep, and Anusha - four UG CS students who started this platform with a simple belief: everyone deserves access to mental health support, no matter their age or walk of life. Our journey began with our own experiences navigating the challenges of student life, but it's grown into something much bigger.
+          Welcome to Manas! We're Ayesha, Anamika, Pranitdeep, and Anusha - four UG CS students who started this platform with a simple belief: everyone deserves access to mental health support, no matter their age or walk of life. Our journey began with our own experiences navigating the challenges of student life, but it's grown into something much bigger.
 
         </p>
         <br />
@@ -37,16 +37,16 @@ const AboutUs = () => {
 
 const TeamMember1 = ({ bgColor }) => (
   <div className='flex flex-col space-y-0 lg:space-y-0'>
-    <TeamMember bgColor={bgColor} name="ANAMIKA AGGARWAL" position="Frontend Developer" index='1' />
-    <TeamMember bgColor={bgColor} name="ANUSHA TOMAR" position="AI ML Developer  " index='2' />
+    <TeamMember bgColor={bgColor} name="PARUL AGGARWAL" position="Frontend Developer" index='1' />
+    <TeamMember bgColor={bgColor} name="AKASH" position="AI ML Developer  " index='2' />
 
   </div>
 );
 
 const TeamMember2 = ({ bgColor }) => (
   <div className='flex flex-col space-y-0 justify-start lg:space-y-0'>
-    <TeamMember bgColor={bgColor} name="AYESHA" position="UI UX Designer" index='3' />
-    <TeamMember bgColor={bgColor} name="PRANITDEEP SINGH" position="Backend Developer" index='4' />
+    <TeamMember bgColor={bgColor} name="PARUL GUPTA" position="UI UX Designer" index='3' />
+    <TeamMember bgColor={bgColor} name="KIRAN" position="Backend Developer" index='4' />
 
   </div>
 );

@@ -35,7 +35,7 @@ function Card() {
           </div>
           <div className='mt-14 bg-[#8c96ed] p-3 rounded-xl text-xl text-white'>
           Currently we are working on collaborating with the best therapists for you 🌟. 
-          <div className='mt-3'>Till then you can enjoy other features on sukoon 🌿</div>
+          <div className='mt-3'>Till then you can enjoy other features on Manas 🌿</div>
           </div>
         </div>
         

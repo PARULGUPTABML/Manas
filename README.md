@@ -1,13 +1,13 @@
-# 🌸 Sukoon - Mental Health Wellness Platform
+# 🌸 Manas - Mental Health Wellness Platform
 
 ## 🌟 Overview
 
-Sukoon is a mental wellness platform offering AI support, self-assessments, therapy access, and resources for managing anxiety, depression, and more. It creates a personalized, supportive space for users to explore and improve their mental health.
+Manas is a mental wellness platform offering AI support, self-assessments, therapy access, and resources for managing anxiety, depression, and more. It creates a personalized, supportive space for users to explore and improve their mental health.
 
 
 ## 🎥 Demo Video (click to play)
 
-[![Watch the demo](public/sukoon-homepage.png)](https://drive.google.com/file/d/1DPbdtP2sBBB33Owi6Qbj4Kf-BBpwLZh1/view?usp=sharing)
+[![Watch the demo](public/manas-homepage.png)](https://drive.google.com/file/d/1DPbdtP2sBBB33Owi6Qbj4Kf-BBpwLZh1/view?usp=sharing)
 
 
 ## 🌟 Features

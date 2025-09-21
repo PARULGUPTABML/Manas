@@ -29,12 +29,9 @@ const Navbar = () => {
 
   return (
     <nav className="top-0 bg-[#122620] p-4 flex justify-between items-center shadow-shd">
-      <img
-        src="/logo.png"
-        alt=""
-        className="scale-[.6] -ml-20 -my-6 cursor-pointer"
-        onClick={() => navigate('/')}
-      />
+      <div className="cursor-pointer px-3 py-1" onClick={() => navigate('/')}> 
+        <span className="text-white text-3xl lg:text-4xl font-semibold italic tracking-wide">Manas</span>
+      </div>
 
       <div className="flex items-center space-x-4 relative">
         <div className="lg:hidden block" ref={dropdownRef}>

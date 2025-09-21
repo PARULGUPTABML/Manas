@@ -94,7 +94,7 @@ const AudioPlayer = ({ currentIndex, sources }) => {
         )}
       </div>
       <div className="mx-4 flex-grow">
-        <div className=" text-xs text-white md:text-sm  mb-4">Guided Meditation By Sukoon</div>
+        <div className=" text-xs text-white md:text-sm  mb-4">Guided Meditation By Manas</div>
         <div className="flex items-center">
           <span className="text-white text-xs -mt-5 mr-2">{formatTime(currentTime)}</span>
           <div
