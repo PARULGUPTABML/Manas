@@ -61,12 +61,12 @@ The following technologies are used in Sukoon:
 
 1. Clone the repository to your local machine using the following command:
     ```bash
-    git clone https://github.com/Sukoon-A-Mental-Wellness-Platform/website.git
+    git clone https://github.com/Manas-A-Mental-Wellness-Platform/website.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd sukoon
+    cd manas
     ```
 
 3. Install the required dependencies:
